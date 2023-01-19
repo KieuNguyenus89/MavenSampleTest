@@ -46,7 +46,7 @@ public class loginStepsDefinations extends BaseTest {
 		homepage.clickLoginMenu();
 	}
 
-	@When("The user enter the {string} in username field and {string} in password file and clicks login button")
+	@When("The user enter the {string} in username field and {string} in password field and clicks login button")
 	public void login(String user, String pass) {
 
 		loginPage.loginToApplication(user, pass);

@@ -24,7 +24,7 @@ Feature: Registration Module
 @login @negative @medium @smoke
 Scenario Outline: Verify User Login With Invalid Credentials
 Given The user is on login/register page
- When The user enter the "<username>" in username field and "<password>" in password file and clicks login button
+ When The user enter the "<username>" in username field and "<password>" in password field and clicks login button
 Then The user should see an error message "ERROR: The username or password you entered is incorrect. Lost your password?"
 
 Examples:

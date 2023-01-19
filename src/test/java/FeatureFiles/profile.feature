@@ -20,7 +20,7 @@
 Feature: Profile Module
 Background: Login and go to profile page
  Given The user is on login/register page
- When The user enter the "simplilearnaug2022" in username field and "simplilearnaug2022" in password file and clicks login button
+ When The user enter the "simplilearnaug2022" in username field and "simplilearnaug2022" in password field and clicks login button
  Then Login should be successful and user is on profile page with profile name as "simplilearnaug2022"
 
 @smoke @logout @positive @critical
