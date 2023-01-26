@@ -36,6 +36,8 @@ public abstract class BaseTest {
 		options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
 		options.addArguments("-–no-sandbox");
 		options.addArguments("window-size=1200,1100");
+		
+		WebDriverManager.chromedriver().setup();
 
 		// driver.set(new ChromeDriver(options));//chrome on local machine
 		try {
