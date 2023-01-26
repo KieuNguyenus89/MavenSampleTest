@@ -10,6 +10,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.ProfilePage;
@@ -41,7 +42,8 @@ public abstract class BaseTest {
 
 		// driver.set(new ChromeDriver(options));//chrome on local machine
 		try {
-			driver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),options)); // chrome on remote machine
+			driver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options)); // chrome on remote
+																								// machine
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
