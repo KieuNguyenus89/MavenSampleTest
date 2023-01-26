@@ -1,10 +1,13 @@
 package testcases;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -35,7 +38,15 @@ public abstract class BaseTest {
 		options.addArguments("-–no-sandbox");
 		options.addArguments("window-size=1200,1100");
 
-		driver.set(new ChromeDriver(options));
+		//driver.set(new ChromeDriver(options));chrome on local machine
+		try {
+			driver.set(new RemoteWebDriver(new URL(" http://172.17.0.1:4444/wd/hub"),options)); //chrome on remote machine
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
 		driver.get().manage().window().maximize();
 		driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		// launch our application
