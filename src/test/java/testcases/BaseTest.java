@@ -39,7 +39,7 @@ public abstract class BaseTest {
 
 		// driver.set(new ChromeDriver(options));//chrome on local machine
 		try {
-			driver.set(new RemoteWebDriver(new URL("Clients should connect to http://172.17.0.1:4444/wd/hub"),options)); // chrome on remote machine
+			driver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),options)); // chrome on remote machine
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
